@@ -19,8 +19,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Logout()
 
 
+    }
+    private fun Logout(){
+        binding.ButtonLogout.setOnClickListener {
+            Constant.DelToken(this)
+            startActivity(Intent(this,IsLogin::class.java))
+            finish()
+
+        }
     }
 
 

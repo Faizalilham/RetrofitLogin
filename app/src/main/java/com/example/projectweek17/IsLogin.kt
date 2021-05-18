@@ -47,6 +47,8 @@ class IsLogin : AppCompatActivity() {
                     if(body != null){
                         Constant.SetToken(this@IsLogin,body.data.token)
                         Toast.makeText(applicationContext," Hii ${body.data.name}", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this@IsLogin,MainActivity::class.java))
+                        finish()
                     }
                 }else{
                     Toast.makeText(applicationContext,"Login Failed",Toast.LENGTH_SHORT).show()
